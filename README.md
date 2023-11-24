@@ -16,6 +16,7 @@ The solutions are structured with detailed comments explaining the approach, alg
 
 ## Folder Structure
 
+main.go
 - day01/
     - solution1.go
     - solution2.go
@@ -26,9 +27,13 @@ The solutions are structured with detailed comments explaining the approach, alg
     - ...
 - ...
 
-## Running the Code
+## Running the Solutions
 
-Each solution is self-contained and can be run independently. Refer to the specific README or comments within each solution file for instructions on how to execute the Golang code.
+To run the solutions for each day, navigate to the root directory of the project in your terminal and execute the `main.go` file:
+
+```bash
+go run main.go
+```
 
 ## Contributing
 
