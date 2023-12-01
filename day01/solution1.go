@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"regexp"
 )
 
 func SolveDay1() {
@@ -15,7 +16,12 @@ func SolveDay1() {
 
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
-		fmt.Println(scanner.Text())
+		text := scanner.Text()
+
+		nonDigitRegexp := regexp.MustCompile(`\D`)
+		digitsOnly := nonDigitRegexp.ReplaceAllString(text, "")
+
+		fmt.Println(digitsOnly)
 	}
 
 	if err := scanner.Err(); err != nil {
