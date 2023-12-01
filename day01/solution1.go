@@ -1,5 +1,24 @@
 package day01
 
-func SolveDay1() string {
-	return "Day 1 solved!"
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
+
+func SolveDay1() {
+	file, err := os.Open("day01/input.txt")
+	if err != nil {
+		fmt.Println(err)
+	}
+	defer file.Close()
+
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		fmt.Println(scanner.Text())
+	}
+
+	if err := scanner.Err(); err != nil {
+		fmt.Println(err)
+	}
 }
