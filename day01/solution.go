@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 	"regexp"
-	// "strings"
+	"strings"
 )
 
 func SolvePart1() int {
@@ -25,9 +25,9 @@ func SolvePart1() int {
 		digitsOnly := nonDigitRegexp.ReplaceAllString(text, "")
 
 		digits := []rune(digitsOnly)
-		
+
 		firstDigit := int(digits[0] - '0')
-		lastDigit := int(digits[len(digits) - 1] - '0')
+		lastDigit := int(digits[len(digits)-1] - '0')
 
 		calibrationValue := (firstDigit * 10) + lastDigit
 
@@ -54,15 +54,29 @@ func SolvePart2() int {
 	for scanner.Scan() {
 		text := scanner.Text()
 
-		// convert numbers as words to numbers as digits
-		
+		replacer := strings.NewReplacer(
+			"one", "1",
+			"two", "2",
+			"three", "3",
+			"four", "4",
+			"five", "5",
+			"six", "6",
+			"seven", "7",
+			"eight", "8",
+			"nine", "9",
+		)
+
+		newText := replacer.Replace(text)
+
+		fmt.Println(newText)
+
 		nonDigitRegexp := regexp.MustCompile(`\D`)
-		digitsOnly := nonDigitRegexp.ReplaceAllString(text, "")
+		digitsOnly := nonDigitRegexp.ReplaceAllString(newText, "")
 
 		digits := []rune(digitsOnly)
-		
+
 		firstDigit := int(digits[0] - '0')
-		lastDigit := int(digits[len(digits) - 1] - '0')
+		lastDigit := int(digits[len(digits)-1] - '0')
 
 		calibrationValue := (firstDigit * 10) + lastDigit
 
