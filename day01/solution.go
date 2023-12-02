@@ -68,8 +68,6 @@ func SolvePart2() int {
 
 		newText := replacer.Replace(text)
 
-		fmt.Println(newText)
-
 		nonDigitRegexp := regexp.MustCompile(`\D`)
 		digitsOnly := nonDigitRegexp.ReplaceAllString(newText, "")
 
