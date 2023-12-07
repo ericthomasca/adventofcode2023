@@ -17,8 +17,6 @@ func main() {
 	fmt.Println("Day 1, Part 2:", day01Part2, "INCORRECT")
 
 	day02Part1 := day02.SolvePart1()
-	fmt.Println(day02Part1)
+	fmt.Println("Day 2, Part 1:", day02Part1)
 
-	day02Part2 := day02.SolvePart2()
-	fmt.Println(day02Part2)
 }
