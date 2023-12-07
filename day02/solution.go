@@ -54,8 +54,6 @@ func SolvePart1() int {
 			}
 		}
 		
-		fmt.Println(gameId)
-		
 		gamePossible := true
 		for _, hand := range handsPossible {
 			if !hand {
@@ -63,8 +61,6 @@ func SolvePart1() int {
 				break
 			}
 		}
-
-		fmt.Println(gamePossible)
 
 		if gamePossible {
 			idSum += gameId
